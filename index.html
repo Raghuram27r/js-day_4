@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+      margin-top: 20px;
+      background-color:darkgrey;
+    }
+    .id-card {
+      width: 200px;
+      height: 250px;
+      margin: 20px auto;
+      padding: 15px;
+      border: 2px solid #333;
+      box-shadow: 5px 3px 3px 5px red ;
+      border-top-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      background-color: plum;
+    }
+       .id-card h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #333;
+    }
+    .id-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 10px 0;
+      border: 2px solid #333;
+    }
+    .id-card .details {
+      text-align: left;
+      margin-top: 10px;
+    }
+    .id-card .details p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #555;
+    }
+    .id-card1 {
+      margin-top: 20px;
+    }
+    .id-card1 input {
+      margin: 5px 0;
+      padding: 5px;
+      width: 200px;
+      font-size: 14px;
+    }
+    .id-card1 button {
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #007BFF;
+      color: white;   
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .id-card1 button:hover {
+      background-color:red;
+    }
+  </style>
+  <body>
+    <div class="id-card" id="idcard">
+      <h2>STUDENT ID'CARD</h2>
+      <img id="photo" src="" alt="std profile" />
+      <div class="details">
+        <p><b>Name :</b><span id="name"></span></p>
+        <p><b>Course :</b><span id="course"></span></p>
+        <p><b>Roll No :</b><span id="rollno"></span></p>
+        <p><b>Section :</b><span id="section"></span></p>
+      </div>
+    </div><br><br>
+    <div class="id-card1">
+      <input type="text" id="inputName" placeholder="Enter the name" />
+      <input type="text" id="inputCourse" placeholder="Enter the Course" />
+      <input type="text" id="inputRollno" placeholder="Enter the rollno" />
+      <input type="text" id="inputSection" placeholder="Enter the section" />
+      <input type="text" id="inputPhotoURL" placeholder="Enter Photo URL">
+      <button onclick="studentData()">Generate</button>
+    </div>
+    <script>
+      function studentData() {
+        const name = document.getElementById("inputName").value;
+        const course = document.getElementById("inputCourse").value;
+        const rollno = document.getElementById("inputRollno").value;
+        const section = document.getElementById("inputSection").value;
+        const photoURL = document.getElementById('inputPhotoURL').value;
+
+        if (name) document.getElementById('name').innerText = name;
+        if (course) document.getElementById('course').innerText = course;
+        if (rollno) document.getElementById('rollno').innerText =rollno;
+        if (section) document.getElementById('section').innerText = section;
+        if (photoURL) document.getElementById('photo').src = photoURL;
+      }
+    </script>
+  </body>
+</html>
